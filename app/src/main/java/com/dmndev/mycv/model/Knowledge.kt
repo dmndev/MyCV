@@ -2,7 +2,7 @@ package com.dmndev.mycv.model
 
 import io.realm.RealmObject
 
-open class Knowledge : RealmObject(){
+open class Knowledge{
     var name: String = ""
     var level: Int = 1
 

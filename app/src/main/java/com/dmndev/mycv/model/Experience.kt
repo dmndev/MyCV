@@ -3,10 +3,10 @@ package com.dmndev.mycv.model
 import io.realm.RealmObject
 import java.util.*
 
-open class Experience : RealmObject() {
+open class Experience{
     var name: String = ""
     var companyName: String = ""
     var startDate: Date = Date()
     var endDate: Date? = null
-    var position: String = ""
+    var description: String = ""
 }
