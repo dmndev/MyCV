@@ -1,7 +1,7 @@
 package com.dmndev.mycv.model
 
-import io.realm.RealmList
-import io.realm.RealmObject
+import com.dmndev.mycv.model.realm.Experience
+import com.dmndev.mycv.model.realm.Knowledge
 
 open class Person  {
     var firstName: String = ""
@@ -9,5 +9,4 @@ open class Person  {
 
     var experiences: List<Experience> = listOf()
     var knowledge: List<Knowledge> = listOf()
-    var hobbys: List<Hobby> = listOf()
 }

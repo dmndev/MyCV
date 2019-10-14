@@ -3,6 +3,8 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
+    <dimen name="view_padding">16dp</dimen>
+
 
     <!-- text size -->
     <dimen name="header_text_size">24sp</dimen>
