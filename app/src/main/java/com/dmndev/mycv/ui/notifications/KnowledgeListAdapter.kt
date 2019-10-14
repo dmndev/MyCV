@@ -8,6 +8,7 @@ import com.dmndev.mycv.R
 import com.dmndev.mycv.model.AdapterModel
 import com.dmndev.mycv.model.realm.Experience
 import com.dmndev.mycv.model.realm.Knowledge
+import com.dmndev.mycv.utils.setProperLevelAndColor
 import kotlinx.android.synthetic.main.item_knowledge.view.*
 
 class KnowledgeListAdapter : RecyclerView.Adapter<KnowledgeListAdapter.KnowledgeViewHolder>() {
@@ -35,6 +36,7 @@ class KnowledgeListAdapter : RecyclerView.Adapter<KnowledgeListAdapter.Knowledge
     class KnowledgeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(item: Knowledge) = with(itemView) {
             knowledgeName.text = item.name
+            knowledgeLevel.setProperLevelAndColor(item.level)
         }
     }
 }

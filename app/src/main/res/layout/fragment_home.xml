@@ -75,8 +75,8 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="88dp"
-        android:layout_height="88dp"
+        android:layout_width="@dimen/avatar_default_size"
+        android:layout_height="@dimen/avatar_default_size"
         android:layout_marginStart="24dp"
         android:layout_marginBottom="16dp"
         android:src="@drawable/face"
