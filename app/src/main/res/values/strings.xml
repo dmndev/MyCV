@@ -3,4 +3,11 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+
+
+    //xmlns:tools="http://schemas.android.com/tools"
+    <string name="tools_name">Fake Name</string>
+    <string name="tools_email">fake.name@email.com</string>
+    <string name="tools_phone">+48 123 890 456</string>
+    <string name="tools_about_me">I\'m a student studying Aerospace Engineering at the University of Manchester. I have work experience in the retail, catering, and commercial transport industry. I am honest, reliable andmy past roles have required good timekeeping and a positive attitude in high pressure environments. My aim is to get relevant internship experience whilst I am at university so I can graduate with a greater understanding of the engineering industry and what companies look for in engineering graduates</string>
 </resources>

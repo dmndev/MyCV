@@ -10,8 +10,8 @@
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:background="@color/colorAccent"
+        android:layout_height="200dp"
+        android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,20 +20,21 @@
         android:id="@+id/fullName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text=" Mock Mockir" />
+        tools:text="@string/tools_name" />
+
     <TextView
         android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fullName"
-        tools:text=" mockmockir@mock.pl" />
+        tools:text="@string/tools_email" />
     <TextView
         android:id="@+id/phone"
         android:layout_width="wrap_content"
@@ -42,71 +43,23 @@
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email"
-        tools:text=" 123 - 245 - 356" />
+        tools:text="@string/tools_phone" />
 
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:layout_width="88dp"
+        android:layout_height="88dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:src="@drawable/ic_launcher_background"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phone" />
+        app:layout_constraintBottom_toTopOf="@+id/aboutMe"
+        app:layout_constraintStart_toStartOf="parent" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/labelExperience"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="32dp"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/view"-->
-<!--        tools:text="Experience" />-->
-<!--    <TextView-->
-<!--        android:id="@+id/labelEducation"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="32dp"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/view"-->
-<!--        tools:text="Education" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/labelKnowledge"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="32dp"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/view"-->
-<!--        tools:text="Knowledge" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/labelLanguage"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="32dp"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/view"-->
-<!--        tools:text="Languages" />-->
-
-<!--    <TextView-->
-<!--        android:id="@+id/labelHobby"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginTop="32dp"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/view"-->
-<!--        tools:text="Hobby" />-->
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/cvList"
+    <TextView
+        android:id="@+id/aboutMe"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="64dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view">
-
-    </androidx.recyclerview.widget.RecyclerView>
-
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        tools:text="@string/tools_about_me" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

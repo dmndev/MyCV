@@ -1,6 +1,6 @@
 package com.dmndev.mycv.utils
 
-import com.dmndev.mycv.model.AdapterModel
+import com.dmndev.mycv.model.realm.AdapterModel
 import com.dmndev.mycv.model.Person
 import java.util.*
 import kotlin.collections.ArrayList

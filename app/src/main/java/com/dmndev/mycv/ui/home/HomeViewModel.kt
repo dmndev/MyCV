@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dmndev.mycv.model.*
+import com.dmndev.mycv.model.realm.AdapterModel
 import com.dmndev.mycv.utils.createListForAdapter
 import java.util.*
 import kotlin.collections.ArrayList

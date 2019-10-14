@@ -5,13 +5,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dmndev.mycv.R
-import com.dmndev.mycv.model.AdapterModel
+import com.dmndev.mycv.model.realm.AdapterModel
 import kotlinx.android.synthetic.main.item_experience.view.*
 import kotlinx.android.synthetic.main.item_experience.view.name
 import kotlinx.android.synthetic.main.item_hobby.view.*
 import kotlinx.android.synthetic.main.item_knowledge.view.*
 import kotlinx.android.synthetic.main.item_label.view.*
-import kotlin.collections.ArrayList
 
 class SectionListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

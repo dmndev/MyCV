@@ -27,14 +27,10 @@ class HomeFragment : Fragment() {
         homeViewModel =
             ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
-        root.cvList.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL ,false)
-        root.cvList.adapter = adapter
 
         homeViewModel.list.observe(this, Observer {
             adapter.setList(it)
         })
         return root
     }
-
-
 }
