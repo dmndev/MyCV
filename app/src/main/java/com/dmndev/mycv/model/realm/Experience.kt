@@ -1,11 +1,11 @@
 package com.dmndev.mycv.model.realm
 
-import com.dmndev.mycv.model.Experience
+import io.realm.RealmObject
 import java.util.*
 
-open class Experience : Experience {
-    override var name: String = ""
-    override var startDate: Date = Date()
-    override var endDate: Date? = null
-    override var description: String = ""
+open class Experience : RealmObject() {
+    var name: String = ""
+    var startDate: Date = Date()
+    var endDate: Date? = null
+    var description: String = ""
 }

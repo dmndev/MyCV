@@ -51,6 +51,6 @@ open class MyCVRepository(
     }
 
     override fun getKnowledge(): Observable<List<Knowledge>> {
-        return localRepository.getObservable<Knowledge>(Knowledge::class.java)
+        return localRepository.getObservableList<Knowledge>(Knowledge::class.java)
     }
 }

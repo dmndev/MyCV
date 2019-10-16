@@ -21,7 +21,7 @@ class LocalRepository @Inject constructor() : MyCVContract.LocalRepository{
         Injector.getComponent().inject(this)
     }
 
-    override fun <T> get(type: Class<RealmModel>): T? {
+    override fun <T : RealmModel> get(type: Class<T>): T? {
         val findFirst : RealmModel? = realm.where(type).findFirst()
         if(findFirst == null) {
             return findFirst as T
@@ -30,11 +30,11 @@ class LocalRepository @Inject constructor() : MyCVContract.LocalRepository{
          return realm.copyFromRealm(realm.where(type).findFirst()) as T
     }
 
-    override fun <T> getList(type: Class<RealmModel>): List<T> {
+    override fun <T : RealmModel> getList(type: Class<T>): List<T> {
         return realm.where(type).findAll() as List<T>
     }
 
-    override fun <T> getObservable(type: Class<RealmModel>): Observable<T> {
+    override fun <T : RealmModel> getObservable(type: Class<T>): Observable<T> {
         return realm.where(type)
             .findAllAsync()
             .asFlowable()
@@ -43,7 +43,7 @@ class LocalRepository @Inject constructor() : MyCVContract.LocalRepository{
             .toObservable()
     }
 
-    override fun <T> getObservableList(type: Class<RealmModel>): Observable<List<T>> {
+    override fun <T : RealmModel> getObservableList(type: Class<T>): Observable<List<T>> {
         return realm.where(type)
             .findAllAsync()
             .asFlowable()
@@ -61,8 +61,8 @@ class LocalRepository @Inject constructor() : MyCVContract.LocalRepository{
 
     private fun <T> saveProperType(obj: T, realm: Realm){
         when(obj){
-            is List<*> -> realm.copyToRealmOrUpdate(obj as List<RealmObject>)
-            is RealmObject -> realm.copyToRealmOrUpdate(obj as RealmObject)
+            is List<*> -> realm.copyToRealmOrUpdate(obj as List<RealmModel>)
+            is RealmObject -> realm.copyToRealmOrUpdate(obj as RealmModel)
             else -> throw UnsupportedOperationException("Not proper realm object")
         }
     }

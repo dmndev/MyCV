@@ -13,10 +13,10 @@ interface MyCVContract {
 
     interface RestRepository
     interface LocalRepository {
-        fun <T> get(type: Class<RealmModel>) : T?
-        fun <T> getList(type: Class<RealmModel>) : List<T>
-        fun <T> getObservable(type: Class<RealmModel>) : Observable<T>
-        fun <T> getObservableList(type: Class<RealmModel>) : Observable<List<T>>
+        fun <T : RealmModel> get(type: Class<T>) : T?
+        fun <T : RealmModel> getList(type: Class<T>) : List<T>
+        fun <T : RealmModel> getObservable(type: Class<T>) : Observable<T>
+        fun <T : RealmModel> getObservableList(type: Class<T>) : Observable<List<T>>
         fun <T> save(obj: T)
     }
 

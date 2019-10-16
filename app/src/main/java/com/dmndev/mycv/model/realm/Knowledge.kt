@@ -1,11 +1,8 @@
 package com.dmndev.mycv.model.realm
 
-import com.dmndev.mycv.model.AdapterModel
-import com.dmndev.mycv.model.ModelType
+import io.realm.RealmObject
 
-open class Knowledge : AdapterModel {
-    override val modelType: ModelType =
-        ModelType.KNOWLEDGE
+open class Knowledge : RealmObject() {
     var name: String = ""
     var level: Int = 1
 }
