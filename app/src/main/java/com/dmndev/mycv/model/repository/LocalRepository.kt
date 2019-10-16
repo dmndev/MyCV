@@ -7,13 +7,12 @@ import com.dmndev.mycv.di.Injector
 import io.reactivex.Observable
 import io.realm.Realm
 import io.realm.RealmModel
+import io.realm.RealmObject
 import io.realm.RealmQuery
 import javax.inject.Inject
 
 
 class LocalRepository @Inject constructor() : MyCVContract.LocalRepository{
-
-
 
     @Inject
     lateinit var realm : Realm
@@ -52,6 +51,20 @@ class LocalRepository @Inject constructor() : MyCVContract.LocalRepository{
             .map {
                 it as List<T>
             }.toObservable()
+    }
+
+    override fun <T> save(obj: T) {
+        realm.executeTransactionAsync{
+            saveProperType(obj, it)
+        }
+    }
+
+    private fun <T> saveProperType(obj: T, realm: Realm){
+        when(obj){
+            is List<*> -> realm.copyToRealmOrUpdate(obj as List<RealmObject>)
+            is RealmObject -> realm.copyToRealmOrUpdate(obj as RealmObject)
+            else -> throw UnsupportedOperationException("Not proper realm object")
+        }
     }
 
     fun logTest(){
