@@ -8,8 +8,9 @@ import com.dmndev.mycv.R
 import com.dmndev.mycv.model.realm.Experience
 import com.dmndev.mycv.utils.formatToString
 import kotlinx.android.synthetic.main.item_experience.view.*
+import javax.inject.Inject
 
-class ExperienceListAdapter : RecyclerView.Adapter<ExperienceListAdapter.ExperienceViewHolder>() {
+class ExperienceListAdapter @Inject constructor() : RecyclerView.Adapter<ExperienceListAdapter.ExperienceViewHolder>() {
 
     override fun onBindViewHolder(holder: ExperienceViewHolder, position: Int) {
         holder.bind(data[position])
