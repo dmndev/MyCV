@@ -2,6 +2,8 @@
   "person" : {
   "firstName" : "Joe",
   "lastName" : "Doe",
+  "email" : "joe.doe@ymail.com",
+  "phone" : "(+48) 888 999 000",
   "aboutMe" : "Skilled data analyst with more than 12 years of industry experience in collecting, organizing, interpreting, and disseminating various types of statistical figures. Energetic presenter and confident communicator with the ability to circulate information in a way that is clear, efficient, and beneficial for end users. Creative in finding solutions to problems and determining modifications for optimal use of organizational data. Expert at providing realistic projections and establishing various scenarios to determine viable process strategies to utilize. Organized and timely in providing staff, departmental members, and executive management with reports on specific data findings and their impact on organizational growth and success."},
   "experiences" : [{
     "id" : 1000,
