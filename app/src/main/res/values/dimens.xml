@@ -4,6 +4,7 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
 
     <dimen name="view_padding">16dp</dimen>
+    <dimen name="view_margin">8dp</dimen>
     <dimen name="view_margin_start_end">16dp</dimen>
 
     <dimen name="avatar_default_size">120dp</dimen>
