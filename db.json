@@ -4,16 +4,19 @@
   "lastName" : "Doe",
   "aboutMe" : "Skilled data analyst with more than 12 years of industry experience in collecting, organizing, interpreting, and disseminating various types of statistical figures. Energetic presenter and confident communicator with the ability to circulate information in a way that is clear, efficient, and beneficial for end users. Creative in finding solutions to problems and determining modifications for optimal use of organizational data. Expert at providing realistic projections and establishing various scenarios to determine viable process strategies to utilize. Organized and timely in providing staff, departmental members, and executive management with reports on specific data findings and their impact on organizational growth and success."},
   "experiences" : [{
+    "id" : 1000,
     "name" : "Junior Data Analyst",
     "startDate" : "1571060906",
     "endDate" : "1571060906",
     "description" : "Worked with advanced calculations to draw conclusions about data findings. Assisted superiors with interpreting data and compiling it in an organized manner."
    },{
+    "id" : 1001,
     "name" : "Data Analyst",
     "startDate" : "1571060906",
     "endDate" : "1571060906",
     "description" : "Organized quarterly projection data gathered by senior analysts in an orderly way for executive management. Reported bi-monthly data analysis findings to upper management to use in making organizational decisions."
    },{
+    "id" : 1002,
     "name" : "Senior Data Analyst",
     "startDate" : "1571060906",
     "endDate" : "1571060906",
@@ -22,18 +25,23 @@
     ],
     
   "knowledge" : [{
+    "id" : 2000,
     "name" : "Dagger 2",
     "level" : 3
   },{
+    "id" : 2001,
     "name" : "Kotlin",
     "level" : 5
   },{
+    "id" : 2002,
     "name" : "Java",
     "level" : 4
   },{
+    "id" : 2003,
     "name" : "Retrofit",
     "level" : 4
   },{
+    "id" : 2004,
     "name" : "GitHub",
     "level" : 5
   }
