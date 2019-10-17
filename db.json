@@ -6,20 +6,20 @@
   "experiences" : [{
     "id" : 1000,
     "name" : "Junior Data Analyst",
-    "startDate" : "1571060906",
-    "endDate" : "1571060906",
+    "startDate" : 1571060906,
+    "endDate" : 1571060906,
     "description" : "Worked with advanced calculations to draw conclusions about data findings. Assisted superiors with interpreting data and compiling it in an organized manner."
    },{
     "id" : 1001,
     "name" : "Data Analyst",
-    "startDate" : "1571060906",
-    "endDate" : "1571060906",
+    "startDate" : 1571060906,
+    "endDate" : 1571060906,
     "description" : "Organized quarterly projection data gathered by senior analysts in an orderly way for executive management. Reported bi-monthly data analysis findings to upper management to use in making organizational decisions."
    },{
     "id" : 1002,
     "name" : "Senior Data Analyst",
-    "startDate" : "1571060906",
-    "endDate" : "1571060906",
+    "startDate" : 1571060906,
+    "endDate" : 1571060906,
     "description" : "Collect data from sales, marketing, and finance departments to use in establishing organizational structure. Present detailed reports about the meaning of gathered data to members of management and help them identify scenarios utilizing modifications in the data."
    }
     ],
