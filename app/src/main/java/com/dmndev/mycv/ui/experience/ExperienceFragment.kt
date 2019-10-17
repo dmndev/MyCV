@@ -36,8 +36,8 @@ class ExperienceFragment : Fragment() {
 
         (activity as AppCompatActivity).setSupportActionBar(root.toolbar)
 
-        root.cvList.adapter = adapter
-        root.cvList.layoutManager = LinearLayoutManager(context)
+        root.experienceList.adapter = adapter
+        root.experienceList.layoutManager = LinearLayoutManager(context)
 
         dashboardViewModel.experienceList.observe(this, Observer {
             adapter.setList(it)

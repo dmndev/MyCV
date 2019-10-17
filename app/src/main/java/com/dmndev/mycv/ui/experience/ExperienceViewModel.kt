@@ -1,6 +1,5 @@
 package com.dmndev.mycv.ui.experience
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,7 +8,6 @@ import com.dmndev.mycv.model.realm.Experience
 import com.dmndev.mycv.model.repository.MyCVRepository
 import com.dmndev.mycv.utils.DisposableManager
 import io.reactivex.observers.DisposableObserver
-import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.rxkotlin.addTo
 import javax.inject.Inject
 
@@ -31,7 +29,7 @@ class ExperienceViewModel : ViewModel() {
         updateAndGetExperience()
     }
 
-    private fun updateAndGetExperience() {
+    fun updateAndGetExperience() {
         myCVRepository.updateExperience()
 
         myCVRepository.getExperience()

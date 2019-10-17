@@ -11,7 +11,6 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dmndev.mycv.R
 import dagger.android.support.AndroidSupportInjection
-import kotlinx.android.synthetic.main.fragment_dashboard.view.cvList
 import kotlinx.android.synthetic.main.fragment_knowledge.view.*
 import javax.inject.Inject
 

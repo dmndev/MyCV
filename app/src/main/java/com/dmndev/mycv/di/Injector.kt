@@ -11,7 +11,6 @@ object Injector {
     fun initializeComponent(app: MyCVApplication) {
         myCVApplicationComponent = DaggerMyCVApplicationComponent.builder()
             .applicationBind(app)
-//            .databaseModule(DatabaseModule())
             .build()
     }
 

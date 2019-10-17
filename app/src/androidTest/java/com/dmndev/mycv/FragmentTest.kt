@@ -15,7 +15,7 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class FragmentTest {
 
-    @Rule
+    @get:Rule
     var activityTestRule = ActivityTestRule<MainActivity>(MainActivity::class.java)
 
     @Before
@@ -26,22 +26,16 @@ class FragmentTest {
     @Test
     fun testCompleteView() {
         onView(withId(R.id.fullName)).check(matches(isDisplayed()))
-        onView(withId(R.id.fullName)).perform(clearText(), typeText("Tester Nowak"))
-        onView(withId(R.id.fullName)).check(matches(withText("Tester Nowak")))
 
         onView(withId(R.id.email)).check(matches(isDisplayed()))
-        onView(withId(R.id.email)).perform(clearText(), typeText("tester@test.com"))
-        onView(withId(R.id.email)).check(matches(withText("tester@test.com")))
 
         onView(withId(R.id.phone)).check(matches(isDisplayed()))
-        onView(withId(R.id.phone)).perform(clearText(), typeText("123456789"))
-        onView(withId(R.id.phone)).check(matches(withText("123456789")))
     }
 
     @Test
     fun testNavigation() {
+        onView(withId(R.id.navigation_dashboard)).check(matches(isDisplayed()))
         onView(withId(R.id.navigation_dashboard)).perform(click())
-        onView(withText("Experience")).check(matches(isDisplayed()))
-
+        onView(withId(R.id.experienceScreen)).check(matches(isDisplayed()))
     }
 }
