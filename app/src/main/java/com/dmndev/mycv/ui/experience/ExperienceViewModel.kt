@@ -29,7 +29,7 @@ class ExperienceViewModel : ViewModel() {
         updateAndGetExperience()
     }
 
-    fun updateAndGetExperience() {
+    private fun updateAndGetExperience() {
         myCVRepository.updateExperience()
 
         myCVRepository.getExperience()
