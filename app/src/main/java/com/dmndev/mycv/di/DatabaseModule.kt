@@ -17,6 +17,7 @@ class DatabaseModule {
         Realm.init(app)
         val realmConfiguration = RealmConfiguration.Builder()
             .name("mycv.db")
+            .deleteRealmIfMigrationNeeded()
             .build()
 
         return Realm.getInstance(realmConfiguration)

@@ -54,6 +54,7 @@ class LocalRepository @Inject constructor() : MyCVContract.LocalRepository{
     }
 
     override fun <T> save(obj: T) {
+        Log.d("LocalRepository", "trying to save data" + obj.toString())
         realm.executeTransactionAsync{
             saveProperType(obj, it)
         }
@@ -61,8 +62,8 @@ class LocalRepository @Inject constructor() : MyCVContract.LocalRepository{
 
     private fun <T> saveProperType(obj: T, realm: Realm){
         when(obj){
-            is List<*> -> realm.copyToRealmOrUpdate(obj as List<RealmModel>)
-            is RealmObject -> realm.copyToRealmOrUpdate(obj as RealmModel)
+            is List<*> -> realm.copyToRealmOrUpdate(obj as List<RealmObject>)
+            is RealmObject -> realm.copyToRealmOrUpdate(obj as RealmObject)
             else -> throw UnsupportedOperationException("Not proper realm object")
         }
     }

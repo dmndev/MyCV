@@ -10,13 +10,15 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.dmndev.mycv.di.Injector
 import com.dmndev.mycv.model.repository.LocalRepository
+import com.dmndev.mycv.utils.DisposableManager
 import dagger.android.AndroidInjection
 import io.realm.Realm
 import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
 
-    @Inject lateinit var localRepository: LocalRepository
+    @Inject
+    lateinit var disposableManager: DisposableManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         AndroidInjection.inject(this)
@@ -24,10 +26,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-
-        localRepository.logTest()
-
         val navController = findNavController(R.id.nav_host_fragment)
         navView.setupWithNavController(navController)
+    }
+
+    override fun onDestroy() {
+        disposableManager.dispose()
+        super.onDestroy()
     }
 }

@@ -21,11 +21,11 @@ interface MyCVContract {
     }
 
     interface MyCVRepository {
-        fun updatePerson() : Observable<Person>
-        fun updateExperience() : Completable
-        fun updateKnowledge() : Completable
-        fun getPerson() : Observable<Person>
-        fun getExperience() : Observable<List<Experience>>
-        fun getKnowledge() : Observable<List<Knowledge>>
+        fun updatePerson()
+        fun updateExperience()
+        fun updateKnowledge()
+        fun getPerson() : Single<Person>
+        fun getExperience() : Single<List<Experience>>
+        fun getKnowledge() : Single<List<Knowledge>>
     }
 }
