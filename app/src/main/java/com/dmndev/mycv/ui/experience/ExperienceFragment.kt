@@ -42,7 +42,7 @@ class ExperienceFragment : Fragment() {
         dashboardViewModel.experienceList.observe(this, Observer {
             adapter.setList(it)
         })
-
+//        dashboardViewModel.updateAndGetExperience()
         return root
     }
 }

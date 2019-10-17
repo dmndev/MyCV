@@ -8,6 +8,7 @@ import com.dmndev.mycv.di.Injector
 import com.dmndev.mycv.model.*
 import com.dmndev.mycv.model.realm.Experience
 import com.dmndev.mycv.model.realm.Knowledge
+import com.dmndev.mycv.model.realm.PersonWrapper
 import com.dmndev.mycv.model.repository.MyCVRepository
 import com.dmndev.mycv.utils.DisposableManager
 import io.reactivex.observers.DisposableObserver
@@ -39,14 +40,13 @@ class HomeViewModel : ViewModel() {
         myCVRepository.updatePerson()
 
         myCVRepository.getPerson()
-            .subscribeWith(object : DisposableObserver<Person>() {
+            .subscribeWith(object : DisposableObserver<PersonWrapper>() {
                 override fun onComplete() {
                 }
 
-                override fun onNext(t: Person) {
-                    if (t.isValid)
+                override fun onNext(t: PersonWrapper) {
                         _person.apply {
-                            value = t
+                            value = t.person
                         }
                 }
 

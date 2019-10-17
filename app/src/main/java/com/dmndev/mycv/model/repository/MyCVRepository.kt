@@ -5,6 +5,7 @@ import com.dmndev.mycv.MyCVContract
 import com.dmndev.mycv.model.Person
 import com.dmndev.mycv.model.realm.Experience
 import com.dmndev.mycv.model.realm.Knowledge
+import com.dmndev.mycv.model.realm.PersonWrapper
 import com.dmndev.mycv.utils.DisposableManager
 import io.reactivex.Completable
 import io.reactivex.Observable
@@ -34,6 +35,7 @@ open class MyCVRepository @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(object : DisposableSingleObserver<Person>() {
                 override fun onSuccess(t: Person) {
+                    Log.d("MyCVRepository", "MyCVRepository Person")
                     localRepository.save(t)
                 }
 
@@ -48,6 +50,7 @@ open class MyCVRepository @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(object : DisposableSingleObserver<List<Experience>>() {
                 override fun onSuccess(t: List<Experience>) {
+                    Log.d("MyCVRepository", "MyCVRepository")
                     localRepository.save(t)
                 }
 
@@ -70,8 +73,8 @@ open class MyCVRepository @Inject constructor(
             }).addTo(disposableManager.compositeDisposable)
     }
 
-    override fun getPerson(): Observable<Person?> {
-        return localRepository.getObservable<Person>(Person::class.java)
+    override fun getPerson(): Observable<PersonWrapper> {
+        return localRepository.getObservable(Person::class.java)
     }
 
     override fun getExperience(): Observable<List<Experience>> {

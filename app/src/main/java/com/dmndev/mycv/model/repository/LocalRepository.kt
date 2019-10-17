@@ -2,6 +2,8 @@ package com.dmndev.mycv.model.repository
 
 import com.dmndev.mycv.MyCVContract
 import com.dmndev.mycv.di.Injector
+import com.dmndev.mycv.model.Person
+import com.dmndev.mycv.model.realm.PersonWrapper
 import io.reactivex.Observable
 import io.realm.Realm
 import io.realm.RealmModel
@@ -31,13 +33,17 @@ class LocalRepository @Inject constructor() : MyCVContract.LocalRepository{
         return realm.where(type).findAll() as List<T>
     }
 
-    override fun <T : RealmModel> getObservable(type: Class<T>): Observable<T?> {
+    override fun getObservable(type: Class<Person>): Observable<PersonWrapper> {
         return realm.where(type)
             .findAllAsync()
             .asFlowable()
             .filter { it.isLoaded }
-            .map { if(it.isNotEmpty()) it[0] else null }
-            .toObservable()
+            .map {
+                PersonWrapper().apply { if(it.isNotEmpty())
+                    person = it[0]
+                else
+                    person = null }
+            }.toObservable()
     }
 
     override fun <T : RealmModel> getObservableList(type: Class<T>): Observable<List<T>> {

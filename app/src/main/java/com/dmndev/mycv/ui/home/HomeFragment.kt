@@ -29,13 +29,16 @@ class HomeFragment : Fragment() {
         (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
 
         homeViewModel.person.observe(this, Observer { person ->
-            if (person.avatarUrl.isNotEmpty() && person.avatarUrl.isNotBlank())
-                Picasso.get().load(person.avatarUrl).into(root.avatar)
+            if(person != null) {
+                if (person.avatarUrl.isNotEmpty() && person.avatarUrl.isNotBlank())
+                    Picasso.get().load(person.avatarUrl).into(root.avatar)
 
-            root.fullName.text = context?.getString(R.string.label_full_name, person.firstName, person.lastName)
-            root.phone.text = person.phone
-            root.email.text = person.email
-            root.aboutMe.text = person.aboutMe
+                root.fullName.text =
+                    context?.getString(R.string.label_full_name, person.firstName, person.lastName)
+                root.phone.text = person.phone
+                root.email.text = person.email
+                root.aboutMe.text = person.aboutMe
+            }
         })
 
         return root
