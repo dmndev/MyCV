@@ -17,6 +17,4 @@ object Injector {
     fun getComponent() : MyCVApplicationComponent{
         return requireNotNull(myCVApplicationComponent)
     }
-
-
 }
