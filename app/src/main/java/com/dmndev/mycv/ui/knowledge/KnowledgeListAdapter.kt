@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dmndev.mycv.R
 import com.dmndev.mycv.model.realm.Knowledge
+import com.dmndev.mycv.utils.setProperLevelAndColor
 import kotlinx.android.synthetic.main.item_knowledge.view.*
 import javax.inject.Inject
 
@@ -34,6 +35,7 @@ class KnowledgeListAdapter @Inject constructor() : RecyclerView.Adapter<Knowledg
     class KnowledgeViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(item: Knowledge) = with(itemView) {
             knowledgeName.text = item.name
+            knowledgeLevel.setProperLevelAndColor(item.level)
         }
     }
 }

@@ -40,14 +40,12 @@ class ExperienceViewModel : ViewModel() {
                 }
 
                 override fun onNext(t: List<Experience>) {
-                    Log.d("ExViewModel", "Succes getting experiences ")
                     _experienceList.apply {
                         value = t
                     }
                 }
 
                 override fun onError(e: Throwable) {
-                    Log.d("ExViewModel", "Error message: " + e.message)
                 }
             }).addTo(disposableManager.compositeDisposable)
     }

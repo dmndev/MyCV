@@ -34,12 +34,10 @@ open class MyCVRepository @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(object : DisposableSingleObserver<Person>() {
                 override fun onSuccess(t: Person) {
-                    Log.d("MyCVRepository", "Succes fetching persob")
                     localRepository.save(t)
                 }
 
                 override fun onError(e: Throwable) {
-                    Log.d("MyCVRepository", "Error message: " + e.message)
                 }
             }).addTo(disposableManager.compositeDisposable)
     }
@@ -50,12 +48,10 @@ open class MyCVRepository @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(object : DisposableSingleObserver<List<Experience>>() {
                 override fun onSuccess(t: List<Experience>) {
-                    Log.d("MyCVRepository", "Succes fetching experience")
                     localRepository.save(t)
                 }
 
                 override fun onError(e: Throwable) {
-                    Log.d("MyCVRepository", "Error message: " + e.message)
                 }
             }).addTo(disposableManager.compositeDisposable)
     }
@@ -66,12 +62,10 @@ open class MyCVRepository @Inject constructor(
             .observeOn(AndroidSchedulers.mainThread())
             .subscribeWith(object : DisposableSingleObserver<List<Knowledge>>() {
                 override fun onSuccess(t: List<Knowledge>) {
-                    Log.d("MyCVRepository", "Succes fetching knowledge")
                     localRepository.save(t)
                 }
 
                 override fun onError(e: Throwable) {
-                    Log.d("MyCVRepository", "Error message: " + e.message)
                 }
             }).addTo(disposableManager.compositeDisposable)
     }

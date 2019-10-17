@@ -1,14 +1,11 @@
 package com.dmndev.mycv.model.repository
 
-import android.util.Log
-import com.dmndev.mycv.MyCVApplication
 import com.dmndev.mycv.MyCVContract
 import com.dmndev.mycv.di.Injector
 import io.reactivex.Observable
 import io.realm.Realm
 import io.realm.RealmModel
 import io.realm.RealmObject
-import io.realm.RealmQuery
 import javax.inject.Inject
 
 
@@ -54,7 +51,6 @@ class LocalRepository @Inject constructor() : MyCVContract.LocalRepository{
     }
 
     override fun <T> save(obj: T) {
-        Log.d("LocalRepository", "trying to save data" + obj.toString())
         realm.executeTransactionAsync{
             saveProperType(obj, it)
         }
@@ -67,15 +63,4 @@ class LocalRepository @Inject constructor() : MyCVContract.LocalRepository{
             else -> throw UnsupportedOperationException("Not proper realm object")
         }
     }
-
-    fun logTest(){
-        Log.d("Local Repository", "test")
-        Log.d("Local Repository", realm.isEmpty.toString())
-    }
-
-
-
-
-
-
 }

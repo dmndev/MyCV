@@ -44,7 +44,6 @@ class HomeViewModel : ViewModel() {
                 }
 
                 override fun onNext(t: Person) {
-                    Log.d("HomeViewModel", "Succes getting experiences ")
                     if (t.isValid)
                         _person.apply {
                             value = t
@@ -52,7 +51,6 @@ class HomeViewModel : ViewModel() {
                 }
 
                 override fun onError(e: Throwable) {
-                    Log.d("HomeViewModel", "Error message while get: " + e.message)
                 }
             }).addTo(disposableManager.compositeDisposable)
     }

@@ -19,13 +19,12 @@
             android:layout_height="300dp"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
-            app:expandedTitleGravity="center"
-            app:title="Knowledge 2"
+            app:expandedTitleGravity="start|bottom"
+            app:title="Knowledge"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
-                app:title="Experience 3"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 style="@style/AppTheme"
