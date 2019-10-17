@@ -26,6 +26,7 @@ class HomeFragment : Fragment() {
             ViewModelProviders.of(this).get(HomeViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         (activity as AppCompatActivity).setSupportActionBar(root.toolbar)
+        (activity as AppCompatActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
 
         homeViewModel.person.observe(this, Observer { person ->
             if (person.avatarUrl.isNotEmpty() && person.avatarUrl.isNotBlank())
