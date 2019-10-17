@@ -34,12 +34,12 @@ class LocalRepository @Inject constructor() : MyCVContract.LocalRepository{
         return realm.where(type).findAll() as List<T>
     }
 
-    override fun <T : RealmModel> getObservable(type: Class<T>): Observable<T> {
+    override fun <T : RealmModel> getObservable(type: Class<T>): Observable<T?> {
         return realm.where(type)
             .findAllAsync()
             .asFlowable()
             .filter { it.isLoaded }
-            .map { it as T }
+            .map { if(it.isNotEmpty()) it[0] else null }
             .toObservable()
     }
 

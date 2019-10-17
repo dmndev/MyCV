@@ -1,8 +1,8 @@
 package com.dmndev.mycv.di
 
-import com.dmndev.mycv.ui.dashboard.ExperienceFragment
+import com.dmndev.mycv.ui.experience.ExperienceFragment
 import com.dmndev.mycv.ui.home.HomeFragment
-import com.dmndev.mycv.ui.notifications.KnowledgeFragment
+import com.dmndev.mycv.ui.knowledge.KnowledgeFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 

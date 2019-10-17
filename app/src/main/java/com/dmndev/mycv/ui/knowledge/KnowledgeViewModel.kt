@@ -1,11 +1,10 @@
-package com.dmndev.mycv.ui.home
+package com.dmndev.mycv.ui.knowledge
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.dmndev.mycv.di.Injector
-import com.dmndev.mycv.model.*
 import com.dmndev.mycv.model.realm.Experience
 import com.dmndev.mycv.model.realm.Knowledge
 import com.dmndev.mycv.model.repository.MyCVRepository
@@ -13,46 +12,42 @@ import com.dmndev.mycv.utils.DisposableManager
 import io.reactivex.observers.DisposableObserver
 import io.reactivex.observers.DisposableSingleObserver
 import io.reactivex.rxkotlin.addTo
-import java.util.*
 import javax.inject.Inject
-import kotlin.collections.ArrayList
 
-class HomeViewModel : ViewModel() {
+class KnowledgeViewModel : ViewModel() {
 
     @Inject
     lateinit var myCVRepository: MyCVRepository
     @Inject
     lateinit var disposableManager: DisposableManager
 
-    private val _person = MutableLiveData<Person>().apply {
-        value = Person()
+    private val _knowledgeList = MutableLiveData<List<Knowledge>>().apply {
+        value = arrayListOf()
     }
-
-    var person: LiveData<Person> = _person
+    val knowledgeList: LiveData<List<Knowledge>> = _knowledgeList
 
     init {
         Injector.getComponent().inject(this)
-        updateAndGetPerson()
+        updateAndGetKnowledgeList()
     }
 
-    private fun updateAndGetPerson() {
-        myCVRepository.updatePerson()
+    private fun updateAndGetKnowledgeList() {
+        myCVRepository.updateKnowledge()
 
-        myCVRepository.getPerson()
-            .subscribeWith(object : DisposableObserver<Person>() {
+        myCVRepository.getKnowledge()
+            .subscribeWith(object : DisposableObserver<List<Knowledge>>() {
                 override fun onComplete() {
                 }
 
-                override fun onNext(t: Person) {
-                    Log.d("HomeViewModel", "Succes getting experiences ")
-                    if (t.isValid)
-                        _person.apply {
-                            value = t
-                        }
+                override fun onNext(t: List<Knowledge>) {
+                    Log.d("KnowledgeViewModel", "Succes getting knowledge ")
+                    _knowledgeList.apply {
+                        value = t
+                    }
                 }
 
                 override fun onError(e: Throwable) {
-                    Log.d("HomeViewModel", "Error message while get: " + e.message)
+                    Log.d("KnowViewModel", "Error message: " + e.message)
                 }
             }).addTo(disposableManager.compositeDisposable)
     }

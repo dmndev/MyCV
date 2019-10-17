@@ -1,4 +1,4 @@
-package com.dmndev.mycv.ui.dashboard
+package com.dmndev.mycv.ui.experience
 
 import android.view.LayoutInflater
 import android.view.View

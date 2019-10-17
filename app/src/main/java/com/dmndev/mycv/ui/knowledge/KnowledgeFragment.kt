@@ -1,25 +1,28 @@
-package com.dmndev.mycv.ui.notifications
+package com.dmndev.mycv.ui.knowledge
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dmndev.mycv.R
-import kotlinx.android.synthetic.main.fragment_dashboard.*
-import kotlinx.android.synthetic.main.fragment_dashboard.view.*
+import dagger.android.support.AndroidSupportInjection
 import kotlinx.android.synthetic.main.fragment_dashboard.view.cvList
-import kotlinx.android.synthetic.main.fragment_notifications.view.*
+import javax.inject.Inject
 
 class KnowledgeFragment : Fragment() {
 
     private lateinit var notificationsViewModel: KnowledgeViewModel
-    val adapter = KnowledgeListAdapter()
+    @Inject
+    lateinit var adapter : KnowledgeListAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        AndroidSupportInjection.inject(this)
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,7 +35,7 @@ class KnowledgeFragment : Fragment() {
         root.cvList.adapter = adapter
         root.cvList.layoutManager = LinearLayoutManager(context)
 
-        notificationsViewModel.text.observe(this, Observer {
+        notificationsViewModel.knowledgeList.observe(this, Observer {
             adapter.setList(it)
         })
         return root

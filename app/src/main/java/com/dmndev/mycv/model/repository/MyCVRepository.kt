@@ -28,10 +28,6 @@ open class MyCVRepository @Inject constructor(
     @Inject
     lateinit var disposableManager: DisposableManager
 
-    fun makeLog(text: String) {
-        Log.d("MyCVRepository", text)
-    }
-
     override fun updatePerson() {
         remoteRepository.getPerson()
             .subscribeOn(Schedulers.io())
@@ -80,21 +76,15 @@ open class MyCVRepository @Inject constructor(
             }).addTo(disposableManager.compositeDisposable)
     }
 
-    override fun getPerson(): Single<Person> {
-        return Single.fromCallable {
-            localRepository.get<Person>(Person::class.java)
-        }
+    override fun getPerson(): Observable<Person?> {
+        return localRepository.getObservable<Person>(Person::class.java)
     }
 
-    override fun getExperience(): Single<List<Experience>> {
-        return Single.fromCallable {
-            localRepository.getList<Experience>(Experience::class.java)
-        }
+    override fun getExperience(): Observable<List<Experience>> {
+        return localRepository.getObservableList<Experience>(Experience::class.java)
     }
 
-    override fun getKnowledge(): Single<List<Knowledge>> {
-        return Single.fromCallable {
-            localRepository.getList<Knowledge>(Knowledge::class.java)
-        }
+    override fun getKnowledge(): Observable<List<Knowledge>> {
+        return localRepository.getObservableList<Knowledge>(Knowledge::class.java)
     }
 }

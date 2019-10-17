@@ -1,16 +1,15 @@
-package com.dmndev.mycv.ui.notifications
+package com.dmndev.mycv.ui.knowledge
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dmndev.mycv.R
-import com.dmndev.mycv.model.AdapterModel
-import com.dmndev.mycv.model.realm.Experience
 import com.dmndev.mycv.model.realm.Knowledge
 import kotlinx.android.synthetic.main.item_knowledge.view.*
+import javax.inject.Inject
 
-class KnowledgeListAdapter : RecyclerView.Adapter<KnowledgeListAdapter.KnowledgeViewHolder>() {
+class KnowledgeListAdapter @Inject constructor() : RecyclerView.Adapter<KnowledgeListAdapter.KnowledgeViewHolder>() {
 
     override fun onBindViewHolder(holder: KnowledgeViewHolder, position: Int) {
         holder.bind(data[position])

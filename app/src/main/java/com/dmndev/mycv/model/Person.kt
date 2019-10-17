@@ -6,6 +6,9 @@ import io.realm.annotations.PrimaryKey
 open class Person : RealmObject() {
     @PrimaryKey var id : Long = 1L
     var firstName: String = ""
-    var sureName: String = ""
+    var lastName: String = ""
     var aboutMe: String = ""
+    var email: String = ""
+    var phone: String = ""
+    var avatarUrl: String = ""
 }
