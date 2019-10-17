@@ -10,7 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.dmndev.mycv.R
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.fragment_dashboard.view.toolbar
+import kotlinx.android.synthetic.main.fragment_experience.view.toolbar
 import kotlinx.android.synthetic.main.fragment_home.view.*
 
 class HomeFragment : Fragment() {

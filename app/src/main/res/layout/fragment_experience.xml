@@ -40,8 +40,8 @@
         android:scrollbars="none"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="@dimen/view_margin_start_end"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"/>
+        android:layout_marginEnd="@dimen/view_margin_start_end"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

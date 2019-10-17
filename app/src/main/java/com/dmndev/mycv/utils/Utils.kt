@@ -15,8 +15,12 @@ fun Date.formatToString(): String {
 
 fun ProgressBar.setProperLevelAndColor(int: Int) {
     this.progress = int
-    if (int == 5) {
-        this.progressTintList = ColorStateList.valueOf(Color.RED)
+    when (int) {
+        1 -> this.progressTintList = ColorStateList.valueOf(Color.parseColor("#d1c4e9"))
+        2 -> this.progressTintList = ColorStateList.valueOf(Color.parseColor("#b39ddb"))
+        3 -> this.progressTintList = ColorStateList.valueOf(Color.parseColor("#9575cd"))
+        4 -> this.progressTintList = ColorStateList.valueOf(Color.parseColor("#7e57c2"))
+        5 -> this.progressTintList = ColorStateList.valueOf(Color.parseColor("#673ab7"))
     }
 }
 

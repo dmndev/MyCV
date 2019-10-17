@@ -10,13 +10,14 @@
         android:id="@+id/knowledgeName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="@dimen/label_small_text_size"
         tools:text="Knowledge" />
 
     <ProgressBar
         android:id="@+id/knowledgeLevel"
         style="@style/Widget.AppCompat.ProgressBar.Horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/progressbar_height"
         android:max="5"
         android:paddingStart="@dimen/view_padding"
         android:paddingEnd="@dimen/view_padding"

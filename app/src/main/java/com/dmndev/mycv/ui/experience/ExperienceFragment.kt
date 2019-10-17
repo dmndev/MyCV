@@ -11,7 +11,7 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dmndev.mycv.R
 import dagger.android.support.AndroidSupportInjection
-import kotlinx.android.synthetic.main.fragment_dashboard.view.*
+import kotlinx.android.synthetic.main.fragment_experience.view.*
 import javax.inject.Inject
 
 class ExperienceFragment : Fragment() {
@@ -32,7 +32,7 @@ class ExperienceFragment : Fragment() {
     ): View? {
         dashboardViewModel =
             ViewModelProviders.of(this).get(ExperienceViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
+        val root = inflater.inflate(R.layout.fragment_experience, container, false)
 
         (activity as AppCompatActivity).setSupportActionBar(root.toolbar)
 
